@@ -1,0 +1,68 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% load static %}
+    {% for post in posts %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <h2 class=""><b>Title:</b>{{ post.title }}</h2>
+                {% if post.image %}
+                <img src="{{ post.image.url }}" alt="Image">
+                {% endif %}
+                <p><b>Body:</b>{{ post.text }}</p>
+                <p><b>Author:</b> {{ post.author }}</p>
+                <p>Created Date: {{ post.created_date }}</p>
+                <p>Published Date: {{ post.published_date }}</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ post.id }}">
+                    <i class="fas fa-pencil-alt"></i> Edit
+                </button>
+                <a href="{% url 'post_delete' id=post.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?')">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+                <hr>
+            </div>
+
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="editModal{{ post.id }}Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModal{{ post.id }}Label">Edit Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{% url 'post_update' id=post.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" value="{{ post.title }}" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="text" class="form-label">Text</label>
+                            <textarea class="form-control" id="text" name="text" rows="4">{{ post.text }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author" name="author" value="{{ post.author }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">File</label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

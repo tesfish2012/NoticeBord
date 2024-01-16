@@ -1,0 +1,133 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
+  
+  <meta name="author" content="themefisher.com">
+
+  <title>Mit Notice</title>
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/dist/magnific-popup.css ' %}">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css ' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+<!-- Header Start --> 
+<style>
+.circle-img {
+    border-radius: 50%;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+}
+</style>
+<header class="navigation">
+
+	<nav class="navbar navbar-expand-lg  py-4" id="navbar">
+		<div class="container">
+		<img class="circle-img"  src="{% static 'images/1.jpg' %}" class="" alt="Tesfay">
+		  <a class="navbar-brand" href="/home">
+		  	MIT<span>Notice</span>
+		  </a>
+
+		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="fa fa-bars"></span>
+		  </button>
+	  
+		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link"  href="#news">News</a>
+			  </li>
+			   <li class="nav-item"><a class="nav-link" href="/about">About us</a></li>
+			   <!-- <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li> -->
+
+			</ul>
+
+			<form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+			  <a href="/register" class="btn btn-solid-border btn-round-full">register</a>
+			  <a href="/login" class="btn btn-solid-border btn-round-full">login</a>
+			</form>
+		  </div>
+		</div>
+	</nav>
+</header>
+{% block content %}
+{% endblock %}
+<!-- footer Start -->
+<footer class="footer section">
+	<div class="container">
+		<div class="footer-btm pt-4">
+			<div class="row">
+				<div class="col-lg-4 col-md-12 col-sm-12">
+					<div class="copyright">
+						&copy; Copyright Reserved to <span class="text-color">Blog</span> by <a href="#" target="_blank">2024</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 col-sm-12">
+					<div class="copyright">
+					Developed by  <a href="www.linkedin.com/in/tesfay-g-tsadkan-181004195" target="_blank">Tesfay G/tsadkan </a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 col-sm-12 text-left text-lg-left">
+					<ul class="list-inline footer-socials">
+						<li class="list-inline-item"><a href="https://www.facebook.com/tesfay.gebretsadkan.18r"><i class="ti-facebook mr-2"></i>Facebook</a></li>
+						<li class="list-inline-item"><a href="www.linkedin.com/in/tesfay-g-tsadkan-181004195"><i class="ti-linkedin mr-2 "></i>Linkedin</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+   
+    </div>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+    <script src="{%static 'js/contact.js'%}"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+   <!--  Magnific Popup-->
+    <script src="{% static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+    <!-- Counterup -->
+    <script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+
+    <!-- Google Map -->
+    <script src="{% static 'plugins/google-map/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+  </body>
+  </html>
+   
+
+

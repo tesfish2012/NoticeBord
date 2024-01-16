@@ -1,0 +1,22 @@
+
+
+{% extends 'blog/base_x.html' %}
+{% block content %}
+{%load static%}
+<br>
+<div class="main-wrapper ">
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<h5> <span><b>Title</b></span>:{{post.title}}</h5>
+		<img  style="height: 300px;" src="{{ post.image.url }}" alt="" class="img-fluid rounded">
+		<p><span><b>Body</b></span>: {{post.text}}</p>
+		<h4><span><b>Author</b></span>: {{post.author}}</h4>
+		<p>Created Date: {{ post.created_date }}</p>
+		<p>Published Date: {{ post.published_date }}</p>
+		<a href="/home" class="btn btn-secondary">Back</a>
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
+{%endblock%}
